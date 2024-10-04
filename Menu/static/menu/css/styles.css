@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #000467;
+    font-family: "Sofia Sans Extra Condensed", Sans-serif;
+}
+
+header, footer {
+    background-color: #FCECFC;
+    color: #00022C;
+    padding: 1em;
+}
+
+header h1, footer p {
+    margin: 0;
+}
+
+nav a, .nav-link {
+    color: #000467 !important;
+    font-size: 16px !important;
+    background-color: #FCECFC;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    height: 35px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+nav a:hover {
+    background-color: #f6dbf6;
+    color: #FCECFC;
+    border: none;
+    transition: all ease-in-out 0.3s;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+}
+main {
+    padding: 2em;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    background-color: #000467;
+    color: #FCECFC;
+    text-decoration: none;
+    transition: all ease-in-out 0.3s;
+    border: none;
+}
+.btn:hover {
+    background-color: #FCECFC;
+    color: #00022C;
+    border: none;
+}
+
+.btn-eliminar {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    background-color: #000467;
+    color: #FCECFC;
+    text-decoration: none;
+    transition: all ease-in-out 0.3s;
+    border: none;
+}
+
+.btn-cancelar {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    background-color: #000467;
+    color: #FCECFC;
+    text-decoration: none;
+    transition: all ease-in-out 0.3s;
+    border: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 0.5em;
+}
+
+header {
+    background-color: #000467;
+    color: #FCECFC;
+    font-family: "Sofia Sans Extra Condensed", Sans-serif;
+    font-size: 77px;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 4.3rem;
+    height: 130px!important;
+}

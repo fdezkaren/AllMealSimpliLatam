@@ -1,0 +1,36 @@
+{% extends 'menu/base.html' %}
+
+{% block title %}Menu para el día {{ menu.fecha }}{% endblock %}
+
+{% block content %}
+<h2>Menu para el día {{ menu.fecha }}</h2>
+
+<h3 class="mt-4">Platos</h3>
+
+{% if platos %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for plato in platos %}
+                <tr>
+                    <td>{{ plato.nombre }}</td>
+                    <td>{{ plato.get_tipo_display }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <div class="alert alert-warning">No hay platos para este menu</div>
+{% endif %}
+
+<a href="{% url 'agregar_plato' menu.pk %}" class="btn btn-success">Añadir Plato</a>
+
+<a href="{% url 'editar_menu' menu.pk %}" class="btn btn-secondary">Editar fecha Menu</a>
+<a href="{% url 'eliminar_menu' menu.pk %}" class="btn btn-danger">Eliminar Menu</a>
+<a href="{% url 'lista_menu' %}" class="btn btn-link">Volver a Vista General</a>
+{% endblock %}

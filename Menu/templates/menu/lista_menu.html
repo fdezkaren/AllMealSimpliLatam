@@ -1,0 +1,25 @@
+{% extends 'menu/base.html' %}
+
+{% block title %}Menu disponible:{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Configuración de Menu</h2>
+
+{% if menus %}
+    <ul class="list-group">
+        {% for menu in menus %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="{% url 'detalle_menu' menu.pk %}">Menu del día {{ menu.fecha }}</a>
+                <span>
+                    <a href="{% url 'editar_menu' menu.pk %}" class="btn btn-sm btn-secondary">Editar</a>
+                    <a href="{% url 'eliminar_menu' menu.pk %}" class="btn btn-sm btn-danger">Eliminar</a>
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <div class="alert alert-info">No hay menu disponible para mostrar</div>
+{% endif %}
+
+<a href="{% url 'crear_menu' %}" class="btn btn-primary mt-3">Agregar nuevo menu</a>
+{% endblock %}

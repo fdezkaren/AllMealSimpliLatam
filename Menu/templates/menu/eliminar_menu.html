@@ -1,0 +1,17 @@
+{% extends 'menu/base.html' %}
+
+{% block title %}Eliminar Menu{% endblock %}
+
+{% block content %}
+<h2>Eliminar Menu del día {{ menu.fecha }}</h2>
+
+<div class="alert alert-danger mt-4">
+    <p>Estas seguro de querer eliminar este menu?</p>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn-eliminar btn-danger">✓ Eliminar</button>
+    <a href="{% url 'detalle_menu' menu.pk %}" class="btn-cancelar btn-secondary">X Cancelar</a>
+</form>
+{% endblock %}

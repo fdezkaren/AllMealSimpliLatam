@@ -1,0 +1,32 @@
+{% extends 'menu/base.html' %}
+
+{% block title %}
+    {% if formulario.instance.pk %}Editar fecha{% else %}Añadir{% endif %} Menu
+{% endblock %}
+
+{% block content %}
+<h2>{% if formulario.instance.pk %}Editar fecha{% else %}Añadir{% endif %} Menu</h2>
+
+{% if formulario.errors %}
+    <div class="alert alert-danger">
+        <ul>
+            {% for field in formulario %}
+                {% if field.errors %}
+                    <li>{{ field.label }}: {{ field.errors|striptags }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+<form method="post" class="mt-4">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ formulario.fecha.label_tag }}
+        {{ formulario.fecha }}
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+
+<a href="{% url 'lista_menu' %}" class="btn btn-link mt-3">Volver a Vista General</a>
+{% endblock %}
